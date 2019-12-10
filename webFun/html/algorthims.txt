@@ -1,0 +1,14 @@
+1.prediction: 0,1,2,3,4
+  Actual: 0,1,2,3,4
+2.prediction: 1, 3, 5
+  Actual: 1, 3, 5
+3.prediction: 3, 7
+  Actual: 3, 7
+4.prediction: 5, 8
+  Actual: 5, 8
+5.prediction: 2, 5, 3, 8
+  Actual: 2, 5, 3, 8
+6.prediction: 15, 10
+  Actual: 15, 10, 10
+7.prediction: 15, 10, 20
+  Actual: 15, 10, 20
