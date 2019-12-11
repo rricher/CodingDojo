@@ -1,0 +1,81 @@
+/* * {
+    outline: 1px solid red;
+} */
+
+div.wrapper {
+    width: 970px;
+    min-height: 970px;
+    margin: 0px auto;
+}
+    div.row1 {
+        width: 970px;
+        height: 570px;
+        margin: 0px;
+        background-color: #245076;
+    }
+        
+        div.header {
+            height: 150px;
+        }
+
+            div.headerLeft {
+                padding: 20px;
+                display: inline-block;
+            }
+
+                 div.headerLeft img {
+                     width: 350px;
+                     height: 100px;
+                 }
+
+            div.headerRight {
+                display: inline-block;
+                vertical-align: top;
+                text-align: center;
+                margin-left: 280px;
+            }
+
+                div.headerRight p {
+                    display: inline-block;
+                    font: 13px sans-serif;
+                    color: white;
+                    margin: 10px 0px 5px 0px;
+                }
+
+                    div.headerRight p#dash {
+                        color: black;
+                    }
+
+                div.headerRight a {
+                    display: inline-block;
+                    font-size: 13px;
+                    color: #bba510;
+                }
+
+                div.headerRight form {
+                    background-color: #444444;
+                    padding: 10px 40px;
+                    border-radius: 7px;
+                    box-shadow: 2px 2px 1px black;
+                }
+
+                    div.headerRight input[type="text"] {
+                        border-style: inset;
+                        border-width: 2px;
+                        text-align: center;
+                        padding: 7px 4px;
+                    }
+
+                    div.headerRight input[type="submit"] {
+                        border-style: outset;
+                        border-width: 2px;
+                        border-radius: 3px;
+                        padding: 5px 10px;
+                        box-shadow: 1px 1px 1px black;
+                        background-color: #245076;
+                        color: white;
+                    }
+
+        div.navigation {
+            
+        }
