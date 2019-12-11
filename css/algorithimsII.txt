@@ -1,0 +1,63 @@
+1. prediction: 2; 3; undefined
+   actual: 2; 3; undefined
+2. prediction: 6; 10
+   actual: 6; 10
+3. prediction: 3; 7
+   actual: 3; 7
+4. prediction: 15; 15; 10; 15
+   actual: 15; 15; 10; 15
+5. prediction: 0; 2; 4; 6; 8; 10; 12; 14
+   actual: 0; 2; 4; 6; 8; 10; 12; 14
+6. prediction: 0; 0; 0; 1; 0; 2
+   actual: 0; 0; 0; 1; 0; 2
+7. prediction: 0; 0; 0; 0; 1; 2; 0; 2; 4; undefined
+   actual: 0; 0; 0; 0; 1; 2; 0; 2; 4; undefined
+8. prediction: 0; 0; 0; 0; 0; 0; 1; 2; 3; 4; 0; 2; 4; 6; 8; 15
+   actual: 0; 0; 0; 0; 0; 0; 1; 2; 3; 4; 0; 2; 4; 6; 8; 15
+
+function printUpTo(x){
+  // your code here
+  if (x < 0) {
+      return false;
+  } else {
+      for (var i = 1; i <= x; i++) {
+          console.log(i);
+      }
+  }
+}
+printUpTo(1000); // should print all the integers from 1 to 1000
+y = printUpTo(-10); // should return false
+console.log(y); // should print false
+
+function printSum(x){
+  var sum = 0;
+  //your code here
+  for (var i = 0; i <= x; i++) {
+      sum += i;
+      console.log(i);
+      console.log(sum);
+  }
+  return sum
+}
+y = printSum(255) // should print all the integers from 0 to 255 and with each integer print the sum so far.
+console.log(y) // should print 32640
+
+function printSumArray(x){
+  var sum = 0;
+  for(var i=0; i<x.length; i++) {
+    //your code here
+    sum += x[1];
+  }
+  return sum;
+}
+console.log( printSumArray([1,2,3]) ); // should log 6
+
+function largestElement(x){
+    var lrgElm = x[0];
+    for (var i = 0; i < x.length; i++) {
+        if (x[i] > lrgElm) {
+            lrgElm = x[i];
+        }
+    }
+    return lrgElm;
+}

@@ -1,0 +1,195 @@
+/* body * {
+    outline: 1px solid red;
+} */
+
+div.wrapper {
+    min-height: 1050px;
+    width: 970px;
+    background-color: #f7f7f7;
+    margin: 0px auto;
+}
+    div.header {
+        height: 70px;
+    }
+
+    div.header h1 {
+        display: inline-block;
+        font: 30px "Comic Sans", cursive;
+        margin-left: 20px;
+    }
+
+    div.header p {
+        display: inline-block;
+        font: 25px sans-serif;
+        font-weight: bold;
+        margin-left: 330px;
+    }
+
+    div.main {
+        width: 970px;
+        min-height: 900px;
+        background-image: radial-gradient(circle, #6f5964, #4b3840);
+    }
+
+    div.profilePic {
+        background-color: lightgrey;
+        display: inline-block;
+        margin: 25px;
+        padding: 5px;
+        vertical-align: top;
+    }
+
+    div.profilePic img {
+        display: inline-block;
+        width: 430px;
+        height: 300px;
+    }
+
+    div.about {
+        display: inline-block;
+        background-image: linear-gradient(to right, white,#dacbd9);
+        height: 314px;
+        width: 440px;
+        margin: 25px;
+        margin-left: 0px;
+        padding: 0px;
+        vertical-align: top;
+    }
+
+    div.about h2 {
+        background-image: linear-gradient(lightgrey,gray,lightgrey);
+        margin: 0;
+        height: 40px;
+        padding-top: 7px;
+        padding-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    div.about p{
+        width: 410px;
+        margin: 10px;
+        margin-top: 17px;
+        padding-bottom: 10px;
+        font: 18px sans-serif;
+        margin-bottom: 15px;
+    }
+
+    div.about a {
+        color: black;
+        margin: 10px;
+        font: 18px sans-serif;
+    }
+
+    div.laMode {
+        margin: 25px;
+        width: 285px;
+        height: 500px;
+        vertical-align: top;
+        display: inline-block;
+        background-image: linear-gradient(to right, white,#dacbd9);
+    }
+
+    div.family {
+        margin: 25px 0px;
+        width: 285px;
+        height: 500px;
+        vertical-align: top;
+        display: inline-block;
+        background-image: linear-gradient(to right, white,#dacbd9);
+    }
+
+    div.fiveEleven {
+        margin: 25px;
+        width: 285px;
+        height: 500px;
+        vertical-align: top;
+        display: inline-block;
+        background-image: linear-gradient(to right, white,#dacbd9);
+    }
+
+    div.top {
+        height: 300px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    div.tiles h2 {
+        background-image: linear-gradient(lightgrey,gray,lightgrey);
+        margin: 0;
+        height: 40px;
+        padding-left: 10px;
+        font: 20px/40px sans-serif;
+        font-weight: bold;
+    }
+
+    div.tiles .large {
+        margin: 0;
+        width: 285px;
+        height: 140px;
+    }
+
+    div.tiles p {
+        margin-top: 10px;
+        margin-bottom: 80px;
+        font: 17px sans-serif;
+        font-weight: lighter;
+    }
+
+    div.tiles h3 {
+        background-image: linear-gradient(lightgrey,gray,lightgrey);
+        margin: 0;
+        height: 40px;
+        padding-left: 10px;
+        font: 19px/40px sans-serif;
+        font-weight: bold;
+    }
+
+    div.tiles .icons {
+        display: inline-block;
+        height: 45px;
+        width: 45px;
+        margin: 3px;
+    }
+
+    div.bot {
+        margin-bottom: 15px;
+        padding-left: 5px;
+    }
+    
+    div.button {
+        display: block;
+        text-align: center;
+    }
+
+    div.tiles a {
+        background-color: green;
+        text-decoration: none;
+        color: white;
+        padding: 4px;
+        border-radius: 5px;
+        border: 2px solid black;
+        box-shadow: 5px 5px 3px grey;
+    }
+
+    div.footer {
+        text-align: center;
+    }
+
+    div.footer p {
+        display: inline;
+        font: 17px sans-serif;
+    }
+
+    div.footer img {
+        height: 20px;
+        width: 20px;
+    }
+
+    div.botFooter {
+        margin: 10px 0px;
+    }
+
+    div.botFooter p {
+        text-decoration: underline;
+        margin-right: 2px;
+    }
