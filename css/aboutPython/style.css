@@ -7,9 +7,9 @@ div.wrapper {
     min-height: 970px;
     margin: 0px auto;
 }
-    div.row1 {
+    div.main {
         width: 970px;
-        height: 570px;
+        height: 500px;
         margin: 0px;
         background-color: #245076;
     }
@@ -21,6 +21,7 @@ div.wrapper {
             div.headerLeft {
                 padding: 20px;
                 display: inline-block;
+                width: 55%;
             }
 
                  div.headerLeft img {
@@ -32,7 +33,7 @@ div.wrapper {
                 display: inline-block;
                 vertical-align: top;
                 text-align: center;
-                margin-left: 280px;
+                width: 40%;
             }
 
                 div.headerRight p {
@@ -54,7 +55,8 @@ div.wrapper {
 
                 div.headerRight form {
                     background-color: #444444;
-                    padding: 10px 40px;
+                    padding: 10px 0px;
+                    margin: 0px 40px;
                     border-radius: 7px;
                     box-shadow: 2px 2px 1px black;
                 }
@@ -76,6 +78,160 @@ div.wrapper {
                         color: white;
                     }
 
-        div.navigation {
+        div.body {
+            margin-left: 10%;
+            margin-right: 2%;
+        }
+
+            div.navigation {
+                background-color: #457dad;
+                padding: .5em;
+                text-align: center;
+                border-radius: 5px;
+                box-shadow: 2px 2px 2px black;
+            }
+
+                div.navigation a {
+                    text-decoration: none;
+                    color: white;
+                    font-size: 1.5em;
+                    font-family: Arial, Helvetica, sans-serif;
+                    margin: 0px .7em;
+                }
+
+            div.guide {
+                display: inline-block;
+                width: 20%;
+                text-align: center;
+                margin-top: 1em;
+                vertical-align: top;
+            }
+
+                div.guide li {
+                    padding: .25em;
+                    color: #bba510;
+                }
+
+                div.guide a {
+                    color: white;
+                    font-size: .95em;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            div.bodyCont {
+                display: inline-block;
+                width: 78%;
+                vertical-align: top;                
+
+            }
+                div.para {
+                    display: block;
+                    text-align: center;
+                    margin-top: 1em;
+                }
+
+                    div.para p{
+                        color: white;
+                        font-size: .86em;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+
+                div.quote {
+                    display: block;
+                    text-align: center;
+                    margin-top: 1em;
+                }
+
+                    div.quote h3 {
+                        color: #ffd42e;
+                        margin: .75em 0;
+                        font-size: 1.15em;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-weight: normal;
+                        font-style: italic;
+
+                    }
+
+                    div.quote h4 {
+                        color: white;
+                        margin: .8em 0;
+                        font-size: 1.05em;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-weight: normal;
+
+                    }
+
+    div.info {
+        text-align: center;
+        padding-left: 10%;
+        margin: 0px;
+    }
+
+        div.collms {
+            width: 40%;
+            display: inline-block;
+            vertical-align: top;
+            border-top: .25em solid #73a7d5;
+            margin: .5em;
+            text-align: center;
+        }
+
+            div.collms h5 {
+                margin: .5em;
+                font-size: 1em;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: normal;
+            }
+
+            div.collms p {
+                margin: .5em;
+                margin-bottom: .1em;
+                font-size: .8em;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+                div.collms p > a {
+                    text-decoration: none;
+                    color: #7dadd8;
+                }
             
+            div.collms ul {
+                margin: .5em;
+                margin-top: .1em;
+                list-style-type: square;
+            }
+
+                div.collms a {
+                    text-decoration: none;
+                    color: #7dadd8;
+                    font-size: .8em;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+
+    div.footer {
+        text-align: center;
+        background-image: linear-gradient(#245177, #3274ac);
+        margin: 0px;
+        height: 100px;
+    }
+
+    div.contacts {
+        display: inline-block;
+        width: 970px;
+        height: 100px;
+        padding-top: 50px;
+        text-align: center;
+    }
+
+        div.contacts a {
+            text-decoration: none;
+            margin: 1em;
+            color: #7dadd8;
+            font-size: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        div.contacts p {
+            color: #7dadd8;
+            font-size: .5em;
+            font-family: Arial, Helvetica, sans-serif;
         }
