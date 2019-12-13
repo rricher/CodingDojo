@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 970px;
+    margin: 0px auto;
+}
+
+    .header {
+        height: 80px;
+    }
+
+        .header img {
+            width: 10%;
+            vertical-align: top;
+        }
+
+        .header h1 {
+            display: inline-block;
+            font-size: 2.5em;
+            font-family: sans-serif;
+            font-weight: normal;
+            vertical-align: middle;
+            padding-top: 3%;
+        }
+
+            .header span {
+                color: blue;
+            }
+
+    h2 {
+        font-size: 1.75em;
+        font-family: sans-serif;
+        font-weight: normal;
+        padding: .5em .75em;
+        background-image: linear-gradient(blue, grey, blue);
+        color: white;
+    }
+
+    .banner {
+        width: 20%;
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 3px;
+        margin-right: 2em;
+    }
+
+        .banner h4 {
+            padding-top: 1.25em;
+            padding-bottom: .75em;
+            font-family: sans-serif;
+            font-size: .83em;
+        }
+
+            .banner h4 span{
+                color: red;
+            }
+
+        .banner p {
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: .76em;
+        }
+
+            .banner p span {
+                color: blue;
+            }
+        
+            .bbuttons {
+                padding: 1em 0px 1.5em 0px;
+                border-bottom: 1px solid darkgrey;
+            }
+
+                .bbuttons input {
+                    width: 95%;
+                    padding: 1em 0em;
+                    border-radius: 5px;
+                    border-style: none;
+                    box-shadow: 2px 2px 2px grey;
+                    font-family: sans-serif;
+                    font-weight: bold;
+                    color: white;
+                }
+
+                    #watch {
+                        margin-bottom: .5em;
+                        background-image: linear-gradient(white, orange);
+                    }
+
+                    #resources {
+                        background-image: linear-gradient(white, blue);
+                    }
+
+            .ad {
+                background-image: url("images/ad_background.png");
+                width: 95%;
+                text-align: center;
+                margin-top: 1.5em;
+                padding: .5em 0em;
+                box-shadow: 2px 2px grey;
+            }
+
+                .ad p {
+                    margin: .5em;
+                    color: white;
+                    font-family: sans-serif;
+                    font-weight: normal;
+                    font-size: 1.3em;
+                }
+
+                .ad img {
+                    display: block;
+                    width: 6em;
+                    height: 6em;
+                    margin: 0px auto;
+                }
+
+                .ad input {
+                    margin: 1.5em;
+                    width: 80%;
+                    height: 2em;
+                    border-style: none;
+                    border-radius: 5px;
+                    background-image: linear-gradient(lightblue, blue);
+                    color: white;
+                    font-family: sans-serif;
+                    font-size: .9em;
+                    box-shadow: 2px 2px 2px black;
+                }
+
+    .body {
+        display: inline-block;
+        width: 75%;
+    }
+
+    .bhead {
+        border-bottom: 1px solid grey;
+        padding-bottom: .5em;
+    }
+
+        .bhome {
+            display: inline-block;
+            width: 48%;
+            padding: .05em 0em;
+            vertical-align: top;
+        }
+
+            .bhome p {
+                display: inline-block;
+                padding: .5em 0em;
+                font-family: sans-serif;
+                color: blue;
+                font-size: 1em;
+                vertical-align: top;
+            }
+
+            .bhome img {
+                display: inline-block;
+                width: 1.5em;
+                height: 1.5em;
+            }
+
+        .bcontact {
+            display: inline-block;
+            width: 50.5%;
+            vertical-align: top;
+            text-align: right;
+        }
+
+            .bcontact img {
+                width: 4em;
+                height: 4em;
+                vertical-align: top;
+            }
+
+            .phoneinf {
+                width: 9em;
+                display: inline-block;
+                text-align: center;
+                vertical-align: top;
+            }
+
+                .phoneinf p {
+                    font-family: sans-serif;
+                    font-size: .6em;
+                    color: grey;
+                }
+
+                    #phnum {
+                        color: aqua;
+                        font-size: 1.5em;
+                    }
+
+        
