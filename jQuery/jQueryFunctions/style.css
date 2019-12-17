@@ -1,0 +1,31 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.colm {
+    border-bottom: 5px solid black;
+    width: 50%;
+    margin: 0 auto;
+}
+
+    .colm button {
+        display: inline-block;
+        vertical-align: top;
+        width: 10%;
+        margin: 6em;
+    }
+
+    .content {
+        display: inline-block;
+        width: 70%;
+        vertical-align: top;
+    }
+
+        .content h1 {
+            margin: .5em;
+        }
+
+.red {
+    background-color: red;
+}
