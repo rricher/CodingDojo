@@ -56,15 +56,37 @@
              });
 
              $('.before button').click(function(){
-                $('.before p').before("<p>a paragraph</p>");
+                $('.before p').before("a paragraph");
              });
 
              $('.after button').click(function(){
-                $('.after p').after("<p>a paragraph</p>");
+                $('.after p').after("a paragraph");
              });
 
              $('.append button').click(function(){
-                $('., p').after("<p>a paragraph</p>");
+                $('.append p').append(" a paragraph.");
+             });
+
+             $('.prepend button').click(function(){
+                $('.prepend p').prepend("a paragraph. ");
+             });
+
+             $('.htmlScript button').click(function(){
+                $('.htmlScript p').html("<a href='#'>a paragraph</a>");
+             });
+
+             $('.attr button').click(function(){
+                 var i = $(".attr p").attr("id");
+                $('.attr p').append(i);
+             });
+
+             $('.val button').click(function(){
+                 var i = $(".val button").val();
+                $('.val p').append(i);
+             });
+
+             $('.text button').click(function(){
+                $('.text p').text("<a href='#'>a paragraph</a>");
              });
 
         });
@@ -183,11 +205,11 @@
         <button type="button"> click me</button>
         <div class="content">
             <h1>ATTR</h1>
-            <p>Clicking the button will add the attr to the end of this paragraph.</p>
+            <p id="attrButton">Clicking the button will add the attr to the end of this paragraph.</p>
         </div>
     </div>
     <div class="colm val">
-        <button type="button"> click me</button>
+        <button type="button" value="redacted"> click me</button>
         <div class="content">
             <h1>Val</h1>
             <p>Clicking the button will add the value to the end of this paragraph.</p>
