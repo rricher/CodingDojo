@@ -1,0 +1,19 @@
+.sprites {
+    display: inline-block;
+    vertical-align: top;
+    width: 69%;
+}
+.dex {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+    border: 5px solid red;
+    height: 35em;
+    position: fixed;
+    text-align: center;
+}
+.dexCont {
+    width: 60%;
+    text-align: left;
+    margin: .5em auto;
+}
