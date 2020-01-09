@@ -1,0 +1,9 @@
+.row {
+    height: 3em;
+}
+.col {
+    display: inline-block;
+    vertical-align: top;
+    width: 3em;
+    height: 3em;
+}

@@ -1,0 +1,10 @@
+pip list - list all the installed modules in the virtual enviorment
+deactivate - quits the virtual enviorment
+pip3 list - shows all the installed modules on your current machine, as opposed to your virtual enviorment
+call my_enviorments/py3Env/scripts/avtivate - avtivates the virtual enviorment py3Env
+pip install django - installs django on the virtual enviorment
+pip freeze - returns the current modules but the layout is different the pip list has them seperated into columns were freeze just has the name of the module followed by == version number
+pip freeze > requirements.txt - creates a file requirements and outputs the result of freeze into that file
+pip uninstall django - unistalls django from the virtual enviorment
+pip show django - throws a warning saying there is no django in this enviorment
+pip search flask - shows all uninstalled/installed modules that contain flask in their name
