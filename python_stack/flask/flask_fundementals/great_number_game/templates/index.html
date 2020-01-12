@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Great Number Game</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        font-family: sans-serif;
+    }
+
+    .main {
+        margin-top: 2em;
+        text-align: center;
+    }
+
+    .result {
+        width: 10em;
+        height: 10em;
+        margin: 1em auto;
+    }
+
+    h4 {
+        padding: 4em .15em;
+        padding-bottom: 1em;
+    }
+
+    h1 {
+        margin-bottom: 1em;
+    }
+
+    form {
+        margin-top: 1.5em;
+        text-align: center;
+    }
+
+    input {
+        display: block;
+        margin: .25em auto;
+        padding: .15em;
+    }
+    </style>
+</head>
+<body>
+    <div class='main'>
+        <h1>Welcome to the great number game!</h1>
+        <h3>I am thinking of a number between 1 and 100</h3>
+        <h3>Take a guess!</h3>
+        {% if session['correct'] == False %}
+            {% if session['above'] == True or session['bellow'] == True %}
+            <div class='result' style='background-color: red;'>
+                {% if session['above'] == True %}
+                    <h4>Too High!</h4>
+                {% endif %}
+                {% if session['bellow'] == True %}
+                    <h4>Too Low!</h4>
+                {% endif %}
+            </div>
+            {% endif %}
+            <form action="/post" method="post">
+                <input type="text" name="guess">
+                <input type="submit" value="Submit">
+            </form>
+        {% else %}
+            <div class="result" style='background-color: lightgreen;'>
+                <h4>{{session['random']}} was the number!</h4>
+                <form action="/" method="post">
+                    <input type="submit" value="Play Again!">
+                </form>
+            </div>
+        {% endif %}
+
+    </div>
+</body>
+</html>
