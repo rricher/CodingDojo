@@ -1,3 +1,8 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "python.venvPath": "C:\\Users\\rrich\\Projects\\CodingDojo\\python_stack\\my_enviroments",
+    "python.venvFolders": [
+        "djangoPy3Env"
+    ],
+    "python.pythonPath": "C:\\Users\\rrich\\Projects\\CodingDojo\\python_stack\\my_enviroments\\djangoPy3Env\\Scripts\\python.exe"
 }
