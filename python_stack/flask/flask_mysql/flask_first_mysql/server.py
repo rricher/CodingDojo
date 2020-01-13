@@ -1,28 +1,56 @@
 from flask import Flask, render_template, request, redirect, session, flash
+from flask_bcrypt import Bcrypt
 from mysqlconnection import connectToMySQL    # import the function that will return an instance of a connection
 app = Flask(__name__)
+bcrypt = Bcrypt(app)
+app.secret_key = "This is a secret shhhh"
 
 @app.route('/')
 def index():
-    mysql = connectToMySQL("first_flask")
-    friends = mysql.query_db("SELECT * FROM friends;")
-    print(friends)
-    return render_template("index.html", all_friends = friends)
+    return render_template("index.html")
 
-@app.route("/create_friend", methods=["POST"])
-def add_friend_to_db():
-    mysql = connectToMySQL("first_flask")
-
-    query = "INSERT INTO friends (first_name, last_name, occupation) VALUES (%(fn)s, %(ln)s, %(occp)s);"
-    data = {
-        "fn": request.form["fname"],
-        "ln": request.form["lname"],
-        "occp": request.form["occ"]
-    }
-    new_friend_id = mysql.query_db(query, data)
+@app.route('/createUser', methods=['POST'])
+def create():
+    # include some logic to validate user input before adding them to the database!
+    # create the hash
+    pw_hash = bcrypt.generate_password_hash(request.form['password'])
+    print(pw_hash)
+    # prints something like b'$2b$12$sqjyok5RQccl9S6eFLhEPuaRaJCcH3Esl2RWLm/cimMIEnhnLb7iC'
+    # be sure you set up your database so it can store password hashes this long (60 characters)
+    mysql = connectToMySQL("login")
+    query = "INSERT INTO users (username, password) VALUES (%(username)s, %(password_hash)s);"
+    # put the pw_hash in our data dictionary, NOT the password the user provided
+    data = { "username" : request.form['username'],
+             "password_hash" : pw_hash }
+    mysql.query_db(query, data)
+    # never render on a post, always redirect!
     return redirect("/")
-    # QUERY: INSERT INTO first_flask (first_name, last_name, occupation, created_at, updated_at) 
-    #                         VALUES (fname from form, lname from form, occupation from form, NOW(), NOW());
+
+@app.route('/login', methods=['POST'])
+def login():
+    # see if the username provided exists in the database
+    mysql = connectToMySQL("login")
+    query = "SELECT * FROM users WHERE username = %(username)s;"
+    data = { "username" : request.form["username"] }
+    result = mysql.query_db(query, data)
+    if len(result) > 0:
+        # assuming we only have one user with this username, the user would be first in the list we get back
+        # of course, we should have some logic to prevent duplicates of usernames when we create users
+        # use bcrypt's check_password_hash method, passing the hash from our database and the password from the form
+        if bcrypt.check_password_hash(result[0]['password'], request.form['password']):
+            # if we get True after checking the password, we may put the user id in session
+            session['userid'] = result[0]['id']
+            # never render on a post, always redirect!
+            session['username'] = data['username']
+            return redirect('/success')
+    # if we didn't find anything in the database by searching by username or if the passwords don't match,
+    # flash an error message and redirect back to a safe route
+    flash("You could not be logged in")
+    return redirect("/")
+
+@app.route("/success")
+def welcome():
+    return render_template('welcome.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
