@@ -1,0 +1,10 @@
+.wrapper {
+    text-align: center;
+}
+
+.word {
+    display: inline-block;
+    border: 3px solid black;
+    padding: 0px 3em;
+    margin-bottom: 1.5em;
+}

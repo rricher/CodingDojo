@@ -1,0 +1,16 @@
+.wrapper {
+    text-align: center;
+}
+
+    .title {
+        border: 3px solid black;
+        display: inline-block;
+        padding: 0em 1em;
+        margin: 1.5em 0px;
+    }
+
+    .time {
+        border: 3px solid black;
+        display: inline-block;
+        padding: 0em 10em;
+    }
