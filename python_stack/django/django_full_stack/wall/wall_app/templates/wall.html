@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Wall</title>
+    <script>
+    $(document).ready(function() {
+
+        $("#postMessage").submit(function() {
+            $.ajax({
+                url: '/post_message',
+                method: 'POST',
+                data: $('#postMessage').serialize()
+            })
+            .done(function(response) {
+                $('.messages').html(response);
+                $('.message_area').val('');
+            })
+            return false;
+        });
+
+        $("#postComment").submit(function() {
+            msgid = $(this).attr("msgid")
+            console.log(msgid)
+            $.ajax({
+                url: '/post_comment',
+                method: 'POST',
+                data: $('#postComment').serialize()
+            })
+            .done(function(response) {
+                console.log("The .done is working")
+                $('.comments_' + msgid).html(response);
+                $('.comment_area_' + msgid).val('');
+            })
+            return false;
+        });
+    })
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand">CodingDojo Wall</a>
+            <div class="justify-content-end">
+                <div class='row'>
+                    <p class="navbar-item mr-3">Welcome {{ user.first_name }}</p>
+                    <a href="/logout" class="navbar-item">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <form action="/post_message" method="POST" id="postMessage">
+            {% csrf_token %}
+            <input type="hidden" name="userid" value="{{user.id}}">
+            <div class="form-group">
+                <p>Post a Message</p>
+                <textarea class="form-control message_area" name="message" rows="3"></textarea>
+            </div>
+            <div class="form-group row justify-content-end">
+                <div class="col-2 align-self-end">
+                    <button type="submit" class='btn btn-primary'>Post a message</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="messages container" style="overflow: scroll; height: 70vh;">
+    {% for message in messages %}
+        <h3>{{message.user.first_name}} {{message.user.last_name}} - {{message.created_at|date:"F dS Y"}}</h3>
+        <div class="container">
+            <p class="mb-1">{{ message.message }}</p>
+            {% if message.user.id == request.session.userid %}
+                <a href="/delete_message">Delete Message</a>
+            {% endif %}
+            <div class="comments_{{message.id}} container">
+                {% for comment in message.comments.all %}
+                    <h5>{{comment.user.first_name}} {{comment.user.last_name}} - {{comment.created_at|date:"F dS Y"}}</h5>
+                    <div class="container">
+                        <p class="mb-1">{{ comment.comment }}</p>
+                    </div>
+                {% endfor %}
+                <form action="/post_comment" method="POST" id="postComment" msgid={{message.id}}>
+                    {% csrf_token %}
+                    <input type="hidden" name="userid" value="{{request.session.userid}}">
+                    <input type="hidden" name="messageid" value="{{message.id}}">
+                    <div class="form-group">
+                        <p class="mb-1">Post a comment</p>
+                        <textarea class="form-control comment_area_{{message.id}}" name="comment" rows="2"></textarea>
+                    </div>
+                    <div class="form-group row justify-content-end">
+                        <div class="col-2 align-self-end">
+                            <button type="submit" class='btn btn-primary'>Post a comment</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</body>
+</html>

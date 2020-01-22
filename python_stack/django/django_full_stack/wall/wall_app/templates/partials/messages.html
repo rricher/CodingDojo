@@ -1,0 +1,9 @@
+{% for message in messages %}
+        <h3>{{message.user.first_name}} {{message.user.last_name}} - {{message.created_at|date:"F dS Y"}}</h3>
+        <div class="container">
+            <p class="mb-1">{{ message.message }}</p>
+            {% if message.user.id == request.session.userid %}
+                <a href="/delete">Delete Message</a>
+            {% endif %}
+        </div>
+    {% endfor %}
