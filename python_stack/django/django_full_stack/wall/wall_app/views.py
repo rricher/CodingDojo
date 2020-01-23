@@ -46,7 +46,6 @@ def wall(request):
         }
         return render(request, 'wall.html', context)
     if request.method == 'POST':
-        print(request.POST['message'])
         return redirect('/wall')
 
 def logout(request):
@@ -67,7 +66,16 @@ def post_comment(request):
         user = User.objects.get(id=request.POST['userid'])
         message = Message.objects.get(id=request.POST['messageid'])
         Comment.objects.create(user=user, message=message, comment=request.POST['comment'])
-        context = {
+        context = { 
             "message": message
         }
         return render(request, 'partials/comments.html', context)
+
+def delete(request):
+    if request.method == "POST":
+        message = Message.objects.get(id=request.POST['messageid'])
+        message.delete()
+        context = {
+            "messages": Message.objects.all().order_by('-created_at'),
+        }
+        return render(request, 'partials/messages.html', context)
