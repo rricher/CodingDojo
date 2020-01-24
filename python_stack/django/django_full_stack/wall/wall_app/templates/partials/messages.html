@@ -1,9 +1,35 @@
 {% for message in messages %}
-        <h3>{{message.user.first_name}} {{message.user.last_name}} - {{message.created_at|date:"F dS Y"}}</h3>
-        <div class="container">
-            <p class="mb-1">{{ message.message }}</p>
-            {% if message.user.id == request.session.userid %}
-                <a href="/delete">Delete Message</a>
-            {% endif %}
+    <h3>{{message.user.first_name}} {{message.user.last_name}} - {{message.created_at|date:"F dS Y"}}</h3>
+    <div class="container">
+        <p class="mb-1">{{ message.message }}</p>
+        {% if message.user.id == request.session.userid %}
+            <form action="/delete" method="POST" id="deleteMessage">
+                {% csrf_token %}
+                <input type="hidden" name="messageid" value="{{message.id}}">
+                <button class='btn btn-link' type="submit">Delete Message</button>
+            </form>
+        {% endif %}
+        <div class="comments_{{message.id}} container">
+            {% for comment in message.comments.all %}
+                <h5>{{comment.user.first_name}} {{comment.user.last_name}} - {{comment.created_at|date:"F dS Y"}}</h5>
+                <div class="container">
+                    <p class="mb-1">{{ comment.comment }}</p>
+                </div>
+            {% endfor %}
+            <form action="/post_comment" method="POST" id="postComment" msgid={{message.id}}>
+                {% csrf_token %}
+                <input type="hidden" name="userid" value="{{request.session.userid}}">
+                <input type="hidden" name="messageid" value="{{message.id}}">
+                <div class="form-group">
+                    <p class="mb-1">Post a comment</p>
+                    <textarea class="form-control comment_area_{{message.id}}" name="comment" rows="2"></textarea>
+                </div>
+                <div class="form-group row justify-content-end">
+                    <div class="col-2 align-self-end">
+                        <button type="submit" class='btn btn-success'>Post a comment</button>
+                    </div>
+                </div>
+            </form>
         </div>
-    {% endfor %}
+    </div>
+{% endfor %}

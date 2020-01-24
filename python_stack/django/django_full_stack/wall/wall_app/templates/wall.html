@@ -25,16 +25,26 @@
 
         $("#postComment").submit(function() {
             msgid = $(this).attr("msgid")
-            console.log(msgid)
             $.ajax({
                 url: '/post_comment',
                 method: 'POST',
                 data: $('#postComment').serialize()
             })
             .done(function(response) {
-                console.log("The .done is working")
                 $('.comments_' + msgid).html(response);
                 $('.comment_area_' + msgid).val('');
+            })
+            return false;
+        });
+
+        $("#deleteMessage").submit(function() {
+            $.ajax({
+                url: '/delete',
+                method: 'POST',
+                data: $('#deleteMessage').serialize()
+            })
+            .done(function(response) {
+                $('.messages').html(response);
             })
             return false;
         });
@@ -54,7 +64,7 @@
         </div>
     </nav>
     <div class="container">
-        <form action="/post_message" method="POST" id="postMessage">
+        <form action="" method="POST" id="postMessage">
             {% csrf_token %}
             <input type="hidden" name="userid" value="{{user.id}}">
             <div class="form-group">
@@ -74,7 +84,11 @@
         <div class="container">
             <p class="mb-1">{{ message.message }}</p>
             {% if message.user.id == request.session.userid %}
-                <a href="/delete_message">Delete Message</a>
+                <form action="" method="POST" id="deleteMessage">
+                    {% csrf_token %}
+                    <input type="hidden" name="messageid" value="{{message.id}}">
+                    <button class='btn btn-link' type="submit">Delete Message</button>
+                </form>
             {% endif %}
             <div class="comments_{{message.id}} container">
                 {% for comment in message.comments.all %}
@@ -83,7 +97,7 @@
                         <p class="mb-1">{{ comment.comment }}</p>
                     </div>
                 {% endfor %}
-                <form action="/post_comment" method="POST" id="postComment" msgid={{message.id}}>
+                <form action="" method="POST" id="postComment" msgid={{message.id}}>
                     {% csrf_token %}
                     <input type="hidden" name="userid" value="{{request.session.userid}}">
                     <input type="hidden" name="messageid" value="{{message.id}}">
@@ -93,7 +107,7 @@
                     </div>
                     <div class="form-group row justify-content-end">
                         <div class="col-2 align-self-end">
-                            <button type="submit" class='btn btn-primary'>Post a comment</button>
+                            <button type="submit" class='btn btn-success'>Post a comment</button>
                         </div>
                     </div>
                 </form>
