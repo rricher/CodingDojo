@@ -11,30 +11,30 @@
      $(document).ready(function(){
 
 
-        $('#email').keyup(function(){
-            console.log("keyup")
-            var data = $('#regform').serialize()
-            $.ajax({
-                url: '/email',
-                method: 'POST',
-                data: data
-            })
-            .done(function(res) {
-                console.log("done with request")
-                console.log(res)
-                $('.email_valid').html(res)
-            })
-        });
+        // $('#email').keyup(function(){
+        //     console.log("keyup")
+        //     var data = $('#regform').serialize()
+        //     $.ajax({
+        //         url: '/email',
+        //         method: 'POST',
+        //         data: data
+        //     })
+        //     .done(function(res) {
+        //         console.log("done with request")
+        //         console.log(res)
+        //         $('.email_valid').html(res)
+        //     })
+        // });
 
         // $("#regform").submit(function() {
-        //     $.ajax({
-        //         url: '/',
-        //         method: 'POST',
-        //         data: $("#regform").serialize()
-        //     })
-        //     .done(function(response) {
-        //         console.log(reponse);
-        //     })
+        //         $.ajax({
+        //             url: '/',
+        //             method: 'POST',
+        //             data: $("#regform").serialize()
+        //         })
+        //         .done(function(response) {
+        //             console.log(reponse);
+        //         })
         //     return false;
         // });
         // $("#logform").submit(function() {
@@ -90,7 +90,13 @@
                         <label for="confirm_password">Confirm Password</label>
                         <input type="password" id='confirm_password' name='confirm_password' class="form-control">
                     </div>
+                    <div style="border: 1px solid black; margin: 1em; padding: .5em; text-align: center;">
+                    <p>Agree to the terms and conditions</p>
+                    <input type="checkbox" id="checkbox" name="checked">
+                    </div>
+                    <div>
                     <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
                 </form>
             </div>
             <div class='col'>

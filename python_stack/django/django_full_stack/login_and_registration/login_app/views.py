@@ -13,6 +13,10 @@ def index(request):
             return render(request, 'index.html', context)
     if request.method == "POST":
         if request.POST['reg_or_log'] == "reg":
+            if not "checked" in request.POST:
+                print("checked is not present")
+                messages.error(request, "please agree to the terms and conditions", extra_tags='register')
+                return redirect("/")
             errors = User.objects.basic_validator(request.POST)
             if len(errors) > 0:
                 for k, v in errors.items():
