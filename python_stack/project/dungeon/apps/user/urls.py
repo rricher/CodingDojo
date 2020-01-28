@@ -1,5 +1,6 @@
 from django.conf.urls import url
-from apps.user.views import Index, Login, Register, Logout
+from .views import Index, Login, Register, Logout
+
 urlpatterns = [
     url(r'^$', Index.as_view()),
     url(r'^login/$', Login.as_view()),

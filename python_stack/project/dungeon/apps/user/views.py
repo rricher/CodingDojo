@@ -21,7 +21,7 @@ class Login(View):
             if bcrypt.checkpw(request.POST['password'].encode(), user.password.encode()):
                     request.session['userid'] = user.id
                     messages.success(request, "Successfuly logged in!")
-                    return redirect('/login/')
+                    return redirect('/character/select/')
         messages.error(request, "Invalid email or password")
         return redirect('/login/')
 
