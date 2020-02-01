@@ -1,0 +1,107 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: monospace;
+    cursor: none;
+}
+
+.wrapper {
+    background-color: black;
+    height: 100vh;
+    text-align: center;
+    color: white;
+}
+
+.main {
+    display: inline-block;
+    margin: 35vh 0px;
+}
+
+.fadein1, .fadein2 {
+    display: none;
+}
+
+.container {
+    margin: 0px auto;
+    padding-top: 5em;
+    width: 50%;
+    height: 60vh;
+}
+
+.actionbar {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 50%;
+    height: 15vh;   
+    margin: auto;
+    border: 2px solid white;
+}
+
+.info {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    height: 100%;
+}
+
+.actions {
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    height: 100%;
+    border-left: 2px solid white;
+}
+
+ul {
+    margin: 2em;
+    list-style-type: none;
+}
+
+.info p {
+    margin: 3em auto;
+}
+
+.selected {
+    text-decoration: underline;
+}
+
+.hpbar {
+    display: inline-block;
+    width: 10em;
+    height: 10px;
+    border: 1px solid white;
+}
+
+.hp {
+    background-color: white;
+    height: 10px;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+}
+
+.charhead {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+}
+
+.monhead {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+}
+
+.mons {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 1em;
+}
+
+.log {
+    overflow: scroll;
+    height: 90%;
+}

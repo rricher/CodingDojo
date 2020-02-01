@@ -1,10 +1,13 @@
 $(document).ready(function(){
-    console.log($('li'))
-    var list = $('li')
-    var i = 0
-    list.first().addClass('selected')
+    function getlist() {
+        var list = $('li');
+        var i = 0;
+        list.first().addClass('selected');
+    }
+    var list = $('li');
+    var i = 0;
+    list.first().addClass('selected');
     $(document).keyup(function(e){
-        console.log(e.keyCode)
         if (e.keyCode == 40) {
             if (i < list.length -1) {
                 list.eq(i).removeClass('selected');
@@ -22,17 +25,19 @@ $(document).ready(function(){
         if (e.keyCode == 13) {
             list.eq(i).removeClass('selected');
             data = list.eq(i).attr('class');
-            console.log(data)
             $('#data').val(data);
-                console.log('made it to the submit', $('form').serialize())
+            $('#attacked').submit(function() {
                 $.ajax({
-                    url: '/character/select/',
-                    method: "post",
-                    data: $('form').serialize(),
-                    success: function(serverResponse) {
-                        console.log('recieved this from the server', serverResponse)
-                    }
+                    url: "/battle/attacked",
+                    method: 'POST',
+                    data: $(this).serialize(),
+
+                }).done(function(e) {
+                    $('.actionbar').html(e)
+                    getlist()
+                })
             });
+            $('#ability').submit()
         }
     })
 });

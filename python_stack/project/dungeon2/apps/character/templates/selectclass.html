@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="{% static 'character/css/style.css' %}">
+    <script src="{% static 'character/js/script.js' %}"></script> 
+    <title>Document</title>
+</head>
+<body>
+    <div class='wrapper'>
+        <div class='main'>
+            <h3>please select a character</h3>
+            <form id="class" action="/character/class/" method='POST'>
+                {% csrf_token %}
+                <ul class='list'>
+                    {% for class in classess %}
+                    <li class='{{class.id}}'>{{ class.name }}</li>
+                    {% endfor %}
+                    <li class="create">+ new</li>
+                </ul>
+                <input type="hidden" id='data' name="data" value="">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

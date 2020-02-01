@@ -1,0 +1,37 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: monospace;
+}
+
+.wrapper {
+    background-color: black;
+    height: 100vh;
+    text-align: center;
+}
+
+.main {
+    display: inline-block;
+    margin: 40vh 0px;
+    color: white;
+}
+
+form {
+    margin: .25em 0px;
+}
+
+input {
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    margin: .25em 0px;
+    padding: .1em;
+}
+
+a {
+    color: white;
+}
+
+#submit {
+    padding: .25em;
+}

@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="{% static 'battle/css/style.css' %}">
+    <script src="{% static 'battle/js/introscript.js' %}"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <div class='intro'>
+                <p class='fadeout'>Welcome {{character.name}}</p>
+                <p class='fadein1'>Your first opponent is a Goblin</p>
+                <p class='fadein2'>Prepare to fight!</p>
+            </div>
+        </div>
+        <form action="/battle/intro/" method='post'>
+            {% csrf_token %}
+        </form>
+    </div>
+</body>
+</html>
