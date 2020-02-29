@@ -1,0 +1,14 @@
+<div class='info'>
+    <p>What ability would you like to use?</p>
+</div>
+<div class='actions'>
+    <form id="ability" action="/battle/attack/" method="post">
+        {% csrf_token %}
+        <ul>
+            {% for ability in abilities %}
+            <li class='{{ability.id}}'>{{ability.name}}</li>
+            {% endfor %}
+        </ul>
+        <input type="hidden" id="data2" name="abilid" value="">
+    </form>
+</div>

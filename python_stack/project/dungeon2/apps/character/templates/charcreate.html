@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'character/css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class='main'>
+            <p>Choose a name</p>
+            <form id="form" action="/character/create/" method='POST'>
+                {% csrf_token %}
+                <input id='create' type="text" name='name' autofocus>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

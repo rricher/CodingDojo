@@ -1,0 +1,58 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <link rel="stylesheet" href="{% static 'battle/css/style.css' %}">
+    <script src="{% static 'battle/js/battlescript.js' %}"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class='wrapper'>
+        <div class='container'>
+            <div class=header>
+                <div class="charhead">
+                    <p>{{char.name}} ({{char.hp}}/{{char.max_hp}})</p>
+                    <div class='hpbar'>
+                        <!-- <div class="hp" style="width:{{charhp}}%"></div> -->
+                    </div>
+                </div>
+                <div class="monhead">
+                    {% for monster in request.session[monsters] %}
+                    <div class="mons">
+                        <p>{{monster.name}} ({{monster.hp}}/{{monster.max_hp}})</p>
+                        <div class='hpbar'>
+                            <!-- <div class="hp" style="width:({{monster.hp}}/{{monster.max_hp}}*100)%"></div> -->
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="log">
+                {% for log in request.session['log'] %}
+                <p>{{log}}</p>
+                {% endfor %}
+            </div>
+        </div>
+            <div class='actionbar'>
+                <div class='info'>
+                    <p>Who would you like to attack?</p>
+                </div>
+                <div class='actions'>
+                    <form id="attacked" action="">
+                        {{ csrf_token }}
+                        <ul>
+                            {% for monster in request.session['monsters'] %}
+                            <li class='{{forloop.counter0}}'>{{monster.name}}</li>
+                            {% endfor %}
+                        </ul>
+                        <input type="hidden" id="data" name="attacked" value="">
+                    </form>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
