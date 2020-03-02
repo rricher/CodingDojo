@@ -1,0 +1,17 @@
+Warrior:
+start hp: 30
+abilities: 
+	slash: lvl:1 dmgmin: 3 dmgmx: 5 crit: 5 hit: 50
+	bash: lvl: 3 dmgmin: 6 dmgmx: 10 crit: 10 hit: 70
+
+Rogue:
+start hp: 25
+abilities:
+	stab: lvl: 1 dmgmin: 1 dmgmx: 3 crit: 20 hit: 60
+	backstav lvl: 3 dmgmin: 4 dmmx: 7 crit: 25 hit: 60
+
+wizard:
+starthp: 20
+abilities:
+	zap: lvl: 1 dmgmin: 5 dmgmx 5 crit: 0 hit: 80
+	fireball: lvl: 3 dmgmin: 10 DMGMAX: 10 crit: 0 hit: 90

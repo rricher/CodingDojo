@@ -1,0 +1,43 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: monospace;
+    cursor: none;
+}
+
+.wrapper {
+    background-color: black;
+    height: 100vh;
+    text-align: center;
+}
+
+.main {
+    display: inline-block;
+    margin: 35vh 0px;
+    color: white;
+}
+
+.list {
+    list-style: none;
+}
+
+li {
+    margin: .1em 0px;
+}
+
+.selected {
+    text-decoration: underline;
+}
+
+.create {
+    font-size: 1.2rem;
+}
+
+#create {
+    background-color: black;
+    color: white;
+    border: none;
+    caret-color: white;
+    text-align: center;
+    margin: .25em 0em;
+}

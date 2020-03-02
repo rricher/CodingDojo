@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'apps.user',
     'apps.character',
+    'apps.battle',
     'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',

@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('apps.user.urls')),
     url(r'^character/', include('apps.character.urls')),
+    url(r'^battle/', include('apps.battle.urls')),
 ]
